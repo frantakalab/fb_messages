@@ -37,3 +37,6 @@ dt[, thread := str_replace(thread, "@facebook.com", "")]
 dt[, plus1000 := .N > 1000L, by = thread]  # 43 threads
 dt[, plus5000 := .N > 5000L, by = thread]  # 15 threads
 dt[, by_me := str_detect(user, "(1445006818@facebook.com|Ond.ej.Zacha)")]
+
+
+blah blah blajh
