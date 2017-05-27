@@ -19,11 +19,13 @@ for (wa_file in wa_files) {
                                  str_locate(meta, ": ")[,2], -1L))]
     wa[, thread := paste0("wa_", thread_name)]
   wa[, threadname := thread_name]
-  wa[, time := parse_date_time(timestamp, "m!d!y!H!M!", locale = "English")]
+  wa[, time := parse_date_time(wa$timestamp, "dmY HM", locale = "English")] # here is the issue, not all time gets parsed
   wa[, meta := NULL]
   wa[, timestamp := NULL]
   setcolorder(wa, c("thread", "threadname", "id", "time", "user", "message"))
   
   wa_dt <- rbindlist(list(wa_dt, wa))
-  
+  rm(wa)
 }
+
+
