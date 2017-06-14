@@ -1,4 +1,4 @@
-library(data.table)
+ library(data.table)
 library(rvest)
 library(magrittr)
 library(lubridate)
